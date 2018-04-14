@@ -1,0 +1,58 @@
+<div ng-controller="addIndexCtrl">
+  <div class="h2 text-center text-danger">
+    vip开卡
+  </div>
+  <form name="myform" novalidate>
+    <div class="form-group" ng-class="{true:'has-error'}[myform.cardno.$dirty && myform.cardno.$invalid]">
+      <div class="input-group">
+        <span class="input-group-addon">卡号</span>
+        <input type="text" name="cardno" required ng-pattern="/^[a-zA-Z]{10,16}$/" ng-model="formdata.Card.Cardno" class="form-control">
+        <span class="glyphicon glyphicon-remove form-control-feedback" ng-if="myform.cardno.$dirty && myform.cardno.$invalid"></span>
+        <!--<span class="input-group-addon" ng-if="myform.cardno.$dirty && myform.cardno.$invalid">
+          <i class="glyphicon glyphicon-remove"></i>
+        </span>
+        -->
+      </div>
+    </div>
+
+    <div class="text-center text-danger" ng-if="myform.cardno.$dirty" ng-messages="myform.cardno.$error">
+       <!-- minlength maxlength  length min max email-->
+       <p ng-message="required">卡号必须填写</p>
+       <p ng-message="pattern">1卡号是10个字符</p>
+    </div>
+
+
+
+
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon">电话</span>
+        <input type="text" name="Phone" ng-model="formdata.Card.Phone" class="form-control">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon">姓名</span>
+        <input type="text" name="Username" ng-model="formdata.Card.Username" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon">充值金额</span>
+        <input type="text" name="Balance" ng-model="formdata.Card.Balance" class="form-control">
+      </div>
+    </div>
+    
+    <div class="text-center">
+      <input type="submit" class="btn btn-primary" ng-disabled="!myform.$valid" ng-click="add()" value="开卡">
+      <input type="submit" class="btn btn-primary" ng-click="close()" value="关闭">
+    </div>
+
+
+
+  </form>
+  
+</div>

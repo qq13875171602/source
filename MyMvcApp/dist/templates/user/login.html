@@ -1,0 +1,32 @@
+<div class="container-fluid" ng-controller="login">
+  <div class="row">
+    <div class="col-md-4 hidden-sm"></div>
+    <div class="col-md-4">
+       <div class="panel panel-primary">
+         <div class="panel-heading">
+           <div class="panel-title text-center">用户登录</div>
+         </div>
+         <div class="panel-body">
+           <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon">用户民</span>
+               <input type="text" name="form" ng-model="formdata.Uname" class="form-control">
+             </div>
+           </div>
+
+           <div class="form-group">
+             <div class="input-group">
+               <span class="input-group-addon">密码</span>
+               <input type="text" name="form" ng-model="formdata.Password" class="form-control">
+             </div>
+           </div>
+         <div class="panel-footer text-center">
+           <span class="btn btn-primary" ng-click="login()">登录</span>
+           <span class="btn btn-primary" ng-click="reset()">重试</span>
+         </div>
+         </div>
+       </div>
+    </div>
+    <div class="col-md-4 hidden-sm"></div>
+  </div>
+</div>

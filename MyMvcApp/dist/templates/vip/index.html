@@ -1,0 +1,34 @@
+<div ng-controller="vipIndexCtrl">
+   <!-- vip/index.html-->
+   {{vips}}
+   <div class="text-right">
+     <span class="btn btn-primary" ng-click="add()">开卡</span>
+     <span class="btn btn-primary" ng-click="query()">刷新</span>
+   </div>
+
+
+   <table class="table table-danger">
+     <thead>
+       <tr>
+         <th>卡号</th>
+         <th>电话</th>
+         <th>用户名</th>
+         <th>余额</th>
+         <th>状态</th>
+         <th>等级</th>
+         <th>开卡日期</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr ng-repeat="zx in vips">
+         <td><span ng-bind="zx.Cardno"></span>{{$index}}</td>
+         <td><span ng-bind="zx.Phone"></span></td>
+         <td><span ng-bind="zx.Username"></span></td>
+         <td><span ng-bind="zx.Balance"></span></td>
+         <td><span ng-bind="zx.Sname"></span></td>
+         <td><span ng-bind="zx.Lname"></span></td>
+         <td><span format-date="{{zx.Created}}"></span></td>        
+       </tr>
+     </tbody> 
+   </table>
+</div>
